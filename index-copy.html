@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="とがしら公園のみなさまの共有サイトです。イベント時の写真やお知らせなど掲載しています。">
+    <title>株式会社架空</title>
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" />
+    <!-- favicon -->
+	<!-- <link rel="shortcut icon" href="/assets/images/m_favicon.ico"> -->
+	<!-- normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <!-- font awesome CSS -->
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+	<!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Noto+Sans+JP&family=Varela+Round&family=Yusei+Magic&display=swap" rel="stylesheet" />
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.4/swiper-bundle.min.css" integrity="sha512-Uny/q0WcgHTmPEwEnudIstSn9ITJ5A4M69WwQ8kii9QmCKfIgwLZQjEo7W0O4yZpamS29cJP0LGrPqFBEzINIw==" crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="splash">
+        <div id="splash-logo"><img src="assets/images/logo.png" alt=""></div>
+    </div><!--/splash-->
+    <div class="splashbg"></div><!---画面遷移用-->
+    <div class="wrapper loader">
+        <header class="header" id="header">
+            <div class="header__logo">
+                <h1 class="logo">
+                    <a href="../index.html" class="logo__link">
+                        <img src="/assets/images/logo.png" alt="" class="logo__img" />
+                        <span class="logo__title">とがしらPARK</span>
+                    </a>
+                </h1>
+            </div>
+            <nav class="global-nav sideGnav">
+                <ul class="global-nav__list">
+                    <li class="global-nav__item"><a href="index.html" class="global-nav__link">ホーム</a></li>
+                    <li class="global-nav__item"><a href="/news/index.html" class="global-nav__link">お知らせ</a></li>
+                    <li class="global-nav__item"><a href="#about" class="global-nav__link">活動内容</a></li>
+                    <li class="global-nav__item"><a href="/album/index.html" class="global-nav__link">アルバム</a></li>
+                    <li class="global-nav__item"><a href="#contact" class="global-nav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="openbtn"><span></span><span></span><span></span></div>
+        </header><!-- /.header -->
+        <main id="home" class="main">
+            <article>
+                <div class="main__Visual">
+                    <div class="main__Visual-img">
+                        <img src="assets/images/top-img.png" alt="" class="main__Visual-imgSP">
+                        <div class="main__Visual-inner inner__xl">
+                            <div class="main__Visual-wrap"></div>
+                            <div class="scrolldown"><span>Scroll</span></div>
+                        </div>
+                    </div>
+                </div><!-- /.mainVisual -->
+                <section class="desc">
+                    <div class="desc__inner inner__xl">
+                        <div class="desc__logo"><img src="assets/images/logo.png" alt="" class="logo"></div>
+                        <h2 class="desc__title">とがしら<span class="pink">PARK</span></h2>
+                        <div class="desc__text">
+                            みなさん、こんにちは。<br />
+                            このサイトは週末にとがしら公園で<br />
+                            遊んでいる子供たちが主役のページです。</div>
+                    </div>
+                </section><!-- /.desc -->
+                <section class="media">
+                    <div class="media__inner inner__xl">
+                        <div class="media__wrap">
+                            <div class="media__heading">Information</div>
+                            <ul class="media__contents">
+                                <li class="media__list">
+                                    <div class="media__tag">お知らせ</div>
+                                    <div class="media__date">2021.05.16</div>
+                                    <div class="media__text">ホームページを更新しました</div>
+                                </li>
+                                <li class="media__list">
+                                    <div class="media__tag">BBQ</div>
+                                    <div class="media__date">2021.05.04</div>
+                                    <div class="media__text"><a href="album/album-20210504.html">バーベキューしましたよ！</a></div>
+                                </li>
+                                <li class="media__list">
+                                    <div class="media__tag">BBQ</div>
+                                    <div class="media__date">2021.05.01</div>
+                                    <div class="media__text"><a href="news/news-20210501.html">バーベキューのアンケート結果のお知らせ</a></div>
+                                </li>
+                                <li class="media__list">
+                                    <div class="media__tag">BBQ</div>
+                                    <div class="media__date">2021.04.30</div>
+                                    <div class="media__text"><a href="news/news-20210430.html">バーベキュー開催のご案内</a></div>
+                                </li>
+                                <li class="media__list">
+                                    <div class="media__tag">お知らせ</div>
+                                    <div class="media__date">2021.04.01</div>
+                                    <div class="media__text">ホームページが完成しました！</div>
+                                </li>
+                            </ul>
+                            <div class="media__link"><a href="news/index.html" class="arrow__link">お知らせ一覧</a></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="news">
+                    <div class="news__inner inner">
+                        <div class="news__wrap">
+                            <h2 class="news__heading">
+                                <img src="assets/images/title_white.png" alt="" class="news__heading-title">
+                            </h2>
+                            <div class="news__panel">
+                                <ul class="news__panel-list">
+                                    <li class="news__panel-item">
+                                        <a href="album/album-20210504.html" class="news__panel-link">
+                                            <span class="tag">お知らせ</span>
+                                            <span class="mask">
+                                                <img src="assets/images/20210504BBQ/0504BBQ_006.jpg" alt="" class="news__panel-img">
+                                            </span>
+                                            <div class="news__panel-title">
+                                                バーベキューしましたよ！
+                                            </div>
+                                            <div class="news__panel-desc">
+                                                5/4にバーベキューしました。アルバム作成しました！
+                                            </div>
+                                            <div class="news__panel-date">2021.05.04</div>
+                                        </a>
+                                    </li>
+                                    <li class="news__panel-item">
+                                        <a href="news/news-20210501.html" class="news__panel-link">
+                                            <span class="tag">お知らせ</span>
+                                            <span class="mask">
+                                                <img src="assets/images/bbq-img01.jpg" alt="" class="news__panel-img">
+                                            </span>
+                                            <div class="news__panel-title">
+                                                バーベキューのアンケート結果のお知らせ
+                                            </div>
+                                            <div class="news__panel-desc">
+                                                アンケート結果を公表いたします。
+                                            </div>
+                                            <div class="news__panel-date">2021.05.01</div>
+                                        </a>
+                                    </li>
+                                    <li class="news__panel-item">
+                                        <a href="news/news-20210430.html" class="news__panel-link">
+                                            <span class="tag">ご案内</span>
+                                            <span class="mask">
+                                                <img src="assets/images/panel_01.jpg" alt="" class="news__panel-img">
+                                            </span>
+                                            <div class="news__panel-title">
+                                                バーベキュー開催のご案内
+                                            </div>
+                                            <div class="news__panel-desc">
+                                                2021/5/4にバーベキューします。<br>内容はコチラから確認できます。
+                                            </div>
+                                            <div class="news__panel-date">2021.04.30</div>
+                                        </a>
+                                    </li>
+                                    <li class="news__panel-item">
+                                        <a href="#" class="news__panel-link">
+                                            <span class="tag">お知らせ</span>
+                                            <span class="mask">
+                                                <img src="assets/images/panel_02.jpg" alt="" class="news__panel-img">
+                                            </span>
+                                            <div class="news__panel-title">
+                                                お友達が増えました！！
+                                            </div>
+                                            <div class="news__panel-desc">
+                                                新しいお友達が増えました。これからも仲良くしてくださいね！
+                                            </div>
+                                            <div class="news__panel-date">2021.04.25</div>
+                                        </a>
+                                    </li>
+                                    <li class="news__panel-item">
+                                        <a href="#" class="news__panel-link">
+                                            <span class="tag">お知らせ</span>
+                                            <span class="mask">
+                                                <img src="assets/images/panel_03.jpg" alt="" class="news__panel-img">
+                                            </span>
+                                            <div class="news__panel-title">
+                                                ホームページを作成しました。
+                                            </div>
+                                            <div class="news__panel-desc">
+                                                みんなの思い出をとがしらメンバー限定で見られるサイト作成しました。
+                                                <br>今後は掲示板も作る予定です！
+                                            </div>
+                                            <div class="news__panel-date">2021.04.01</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div><!-- /.news__panel -->
+                            <div class="news__link">
+                                <a href="news/index.html" class="arrow__link">
+                                    お知らせ一覧
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- /.news -->
+                <section class="about" id="about">
+                    <div class="about__inner inner__xl">
+                        <div class="about__wrap">
+                            <div class="about__heading">
+                                <h2 class="about__title heading-primary">
+                                    <img src="assets/images/works.png" alt="">
+                                </h2>
+                            </div>
+                            <div class="about__img first-img">
+                                <img src="assets/images/people.png" alt="">
+                            </div>
+                            <div class="about__img second-img">
+                                <img src="assets/images/sports.png" alt="">
+                            </div>
+                            <div class="about__img third-img">
+                                <img src="assets/images/events.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- /.about -->
+                <section class="album" id="album">
+                    <div class="album__inner inner">
+                        <div class="album__heading">
+                            <h2 class="album__title">
+                                <img src="assets/images/title_green.png" alt="">
+                            </h2>
+                        </div>
+                        <ul class="gallery">
+                            <li class="album__item">
+                                <a href="/album/index.html">
+                                    <img src="/assets/images/20210504BBQ/0504BBQ_001.jpg" alt="" />
+                                    <div class="album__overlay">
+                                        <div class="album__overlay-inner">
+                                            <h3 class="album__overlay-title">2021年5月4日</h3>
+                                            <p class="album__overlay-desc">バーベキュー</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="album__item">
+                                <a href="/album/index.html">
+                                    <img src="/assets/images/20210504BBQ/0504BBQ_002.jpg" alt="" />
+                                    <div class="album__overlay">
+                                        <div class="album__overlay-inner">
+                                            <h3 class="album__overlay-title">2021年5月4日</h3>
+                                            <p class="album__overlay-desc">バーベキュー</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="album__item">
+                                <a href="/album/index.html">
+                                    <img src="/assets/images/20210504BBQ/0504BBQ_003.jpg" alt="" />
+                                    <div class="album__overlay">
+                                        <div class="album__overlay-inner">
+                                            <h3 class="album__overlay-title">2021年5月4日</h3>
+                                            <p class="album__overlay-desc">バーベキュー</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="album__item">
+                                <a href="/album/index.html">
+                                    <img src="/assets/images/20210504BBQ/0504BBQ_004.jpg" alt="" />
+                                    <div class="album__overlay">
+                                        <div class="album__overlay-inner">
+                                            <h3 class="album__overlay-title">2021年5月4日</h3>
+                                            <p class="album__overlay-desc">バーベキュー</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="album__item">
+                                <a href="/album/index.html">
+                                    <img src="/assets/images/20210504BBQ/0504BBQ_005.jpg" alt="" />
+                                    <div class="album__overlay">
+                                        <div class="album__overlay-inner">
+                                            <h3 class="album__overlay-title">2021年5月4日</h3>
+                                            <p class="album__overlay-desc">バーベキュー</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="album__item">
+                                <a href="/album/index.html">
+                                    <img src="/assets/images/20210504BBQ/0504BBQ_006.jpg" alt="" />
+                                    <div class="album__overlay">
+                                        <div class="album__overlay-inner">
+                                            <h3 class="album__overlay-title">2021年5月4日</h3>
+                                            <p class="album__overlay-desc">バーベキュー</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="album__item">
+                                <a href="/album/index.html">
+                                    <img src="/assets/images/20210504BBQ/0504BBQ_007.jpg" alt="" />
+                                    <div class="album__overlay">
+                                        <div class="album__overlay-inner">
+                                            <h3 class="album__overlay-title">2021年5月4日</h3>
+                                            <p class="album__overlay-desc">バーベキュー</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="album__link">
+                            <a href="album/index.html" class="arrow__link">
+                                アルバム一覧
+                            </a>
+                        </div>
+                    </div>
+                </section><!-- /.album -->
+                <section class="contact" id="contact">
+                    <div class="contact__inner inner">
+                        <div class="contact__heading">
+                            <h2 class="contact__title">
+                                <img src="assets/images/contact.png" alt="">
+                            </h2>
+                        </div>
+                        <div class="contact__img">
+                            <img src="/assets/images/contact-img.jpg" alt="">
+                        </div>
+                        <div class="contact__message">
+                            <div class="contact__message-inner">
+                                <p class="contact__message-desc">
+                                    週末のとがしら公園で遊んでいますので、気軽にお声がけください。多くの方々と交流して地域を盛り上げていけたらいいなと思っています。<br>これからもよろしくお願いします！！
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- /.contact -->
+                <section class="faq">
+                   <div class="faq__inner inner">
+                       <div class="faq__heading">
+                           <h2 class="faq__title"><img src="/assets/images/faq_title.png" alt=""></h2>
+                       </div>
+                       <ul class="accordion__area">
+                           <li>
+                               <section>
+                                   <h3 class="accordion__title">誰でも参加できますか？</h3>
+                                   <div class="accordion__box">
+                                       <p>はい。どなたでもご参加いただけます。公園でお声がけください。</p>
+                                   </div>
+                               </section>
+                           </li>
+                           <li>
+                                <section>
+                                    <h3 class="accordion__title">仲良くしていただけますか？</h3>
+                                    <div class="accordion__box">
+                                        <p>はい。親・子ともに和気あいあいと週末を楽しんでいます。</p>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section>
+                                    <h3 class="accordion__title">バーベキューはいつ開催していますか？</h3>
+                                    <div class="accordion__box">
+                                        <p>GW（5月）期間中とお盆休み（8月）に開催することが多いです。</p>
+                                    </div>
+                                </section>
+                            </li>
+                       </ul>
+                   </div> 
+                </section><!-- /.faq -->
+            </article>
+        </main>
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="footer__inner">
+                    <nav class="footer__menu">
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">ホーム</a></li>
+                            <li class="footer__item"><a href="news/index.html" class="footer__link">お知らせ</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">活動内容</a></li>
+                            <li class="footer__item"><a href="album/index.html" class="footer__link">アルバム</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">お問い合わせ</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer__sns">
+                        <ul class="footer__sns-list">
+                            <li class="footer__sns-item"><a href="#" class="footer__sns-link"><i class="fab fa-line"></i></a></li>
+                            <li class="footer__sns-item"><a href="#" class="footer__sns-link"><i class="fab fa-twitter"></i></a></li>
+                            <li class="footer__sns-item"><a href="#" class="footer__sns-link"><i class="fab fa-instagram"></i></a></li>
+                            <li class="footer__sns-item"><a href="#" class="footer__sns-link"><i class="fab fa-facebook"></i></a></li>
+                        </ul>
+                    </div>
+                    <small lang="en">&copy;Togashira Park by SocketWEB 2021</small>
+                </div>
+            </div>
+        </footer>
+        <div class="page-top">
+            <a href="." class="page-top__link">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div><!-- /.wrapper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.4/swiper-bundle.min.js" integrity="sha512-hQQhpacNvYwkN+PyMQghLPCql/6OQfWNKVUkpW0KgCB5XjqtIkxm8UYny+gTjvIfvE/CrqrKEUOLotbHBFs/0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+    <script src="js/scroll-polyfill.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="/assets/js/function.js"></script>
+</body>
+</html>

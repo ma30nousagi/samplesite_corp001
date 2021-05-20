@@ -1,0 +1,33 @@
+.flipLeft{
+    animation-name: flipLeftAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    perspective-origin: left center;
+    opacity:0;
+}
+    
+@keyframes flipLeftAnime{
+  from {
+   transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
+     opacity: 0;
+  }
+
+  to {
+  transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+  }
+}
+
+/* スマホ表示用。flipLeftTriggerを指定している親要素に指定しないとうまく動かない*/
+#vision,
+.service-area{
+    transform:  translate3d(0, 0, 0);
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.bgLRextendTrigger,
+.bgappearTrigger,
+.fadeUpTrigger,
+.flipLeftTrigger{
+    opacity: 0;
+}
