@@ -1,0 +1,256 @@
+
+/*------------------------*/
+/* 共通設定.header */
+/*------------------------*/
+.header {
+    width: 100%;
+    height: 120px;
+    &__logo {
+        padding-left: 70px;
+    }
+    & .logo {
+        &__img {
+            width: 10%;
+        }
+        &__title {
+            font-size: 1.5em;
+        }
+    }
+}
+/*------------------------*/
+/* .contact */
+/*------------------------*/
+.contact {
+    &__img {
+        & .contact__img-ballon {
+            top: -80px;
+            right: 100px;
+            width: 30%;
+        }
+        & .contact__img-cake {
+            top: -80px;
+            left: 100px;
+            width: 20%;
+        }
+        
+    }
+    &__message {
+        max-width: 600px;
+        margin: 0 auto;
+        &-inner {
+            background: #F0F3F5;
+            padding: 20px 30px;
+            border-radius: 20px;
+        }
+        &-desc {
+            font-size: 20px;
+        }
+    }
+}
+/*------------------------*/
+/* .footer */
+/*------------------------*/
+.footer {
+    &__inner {
+        width: 100vw;
+        padding: 30px 70px;
+    }
+    &__item {
+        font-size: 16px;
+        &:not(:last-child) {
+            padding-right: 30px;
+            &::after {
+                right: 15px;
+            }
+        }
+    }
+}
+
+/*-------------------*/
+/* .gallery*/
+/*-------------------*/
+.gallery {
+    columns: 3;
+}
+
+/*------------------------*/
+/* TOP/.main__Visual */
+/*------------------------*/
+.main__Visual {
+    margin-top: 20px;
+    &-title {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &-circle1 {
+        top: 0;
+        right: 28%;
+    }
+    &-circle2 {
+        bottom: 70px;
+        left: 35%;
+    }
+}
+/*------------------------*/
+/* TOP/.desc */
+/*------------------------*/
+.desc {
+    &__logo {
+        margin: 0 auto;
+        transform: none;
+        margin-bottom: 20px;
+    }
+    &__title {
+        font-size: 26px;
+    }
+    &__text {
+        font-size: 20px;
+    }
+}
+
+/*------------------------*/
+/* TOP/.news */
+/*------------------------*/
+.news {
+    &__panel {
+        margin-bottom: 50px;
+        &-item {
+            flex-basis: 30%;
+            margin-bottom: 0;
+        }
+        &-img {
+            height: 250px;
+        }
+    }
+        
+}
+
+/*------------------------*/
+/* .album */
+/*------------------------*/
+.album {
+    &__card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            &:hover {
+                box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                transition: all .8s;
+            }
+        }
+        &-link {
+            width: 295px;
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+            
+        }
+    }
+}
+
+/*------------------------*/
+/* .subalbum */
+/*------------------------*/
+.subalbum {
+    &__card {
+        &-list {
+            justify-content: left;
+        }
+        &-item {
+            flex-basis: 28%;
+        }
+    }
+    &__wrapper {
+        & >h3 {
+            max-width: 600px;
+            margin-bottom: 50px;
+        }
+        & .subalbum__txt {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            margin-bottom: 80px;
+        }
+    }
+}
+
+/*------------------------*/
+/* .subalbumページ/swiper */
+/*------------------------*/
+.albumBack {
+    padding-top: 50px;
+}
+
+
+
+
+
+
+/*------------------------*/
+/* table */
+/*------------------------*/
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 0;
+    width: 900px;
+}
+table tr {
+  background-color: #fff;
+  &:not(:last-child) {
+    border-bottom: 2px solid #fff;
+  }
+}
+table tr:nth-child(even){
+  background-color: #eee;
+}
+table th,
+table td {
+  padding: 20px;
+  font-size: 20px;
+}
+table th{
+  background-color: $cPink;
+  color:#fff;
+  width: 20%;
+}
+
+table td {
+    & >strong {
+      font-weight: 700;
+      color: red;
+  }
+    & >ol {
+        & >li {
+          list-style: decimal!important;
+          & >strong {
+              font-weight: 700;
+              color: red;
+          }
+          &:not(:last-child) {
+              margin-bottom: 10px;
+          }
+        }
+      }
+      & >ul {
+          & >li {
+              list-style: disc!important;
+              &:not(:last-child) {
+                  margin-bottom: 10px;
+              }
+          }
+      }
+}
+
+/*-------------------*/
+/* openbtn */
+/*-------------------*/
+.openbtn {
+    width: 50px;
+
+}

@@ -1,0 +1,90 @@
+@media screen and (max-width: 960px) {
+    table {
+      border: 0;
+      width:100%
+    }
+    table th{
+      background-color: $cPink;
+      display: block;
+      border-right: none;
+      font-size: 20px;
+    }
+    table tr {
+      display: block;
+      margin-bottom: .625em;
+      background-color: #fff;      
+    }
+    table td {
+      border-bottom: 1px dotted #bbb;
+      display: block;
+      font-size: 16px;
+      text-align: left;
+      position: relative;
+      padding: 1.5em 1em;
+      border-right: none;
+      & >strong {
+        font-weight: 700;
+        color: red;
+    }
+      & >ol {
+          margin-top: 20px;
+          padding-left: 20px;
+          & >li {
+            list-style: decimal!important;
+            & >strong {
+                font-weight: 700;
+                color: red;
+            }
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+          }
+        }
+        & >ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            & >li {
+                list-style: disc!important;
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      position: absolute;
+      left: 10px;
+      color: #000;
+    }
+    table td:last-child {
+      border-bottom: 0;
+    }
+    table tbody th {
+      color: #fff;
+      padding: 1em
+    }
+    table tr:nth-child(even){
+        background-color: #eee;
+    }
+}
+.info__table {
+    margin-bottom: 30px;
+}
+.table__link {
+    position: relative;
+    margin-top: 10px;
+    padding-left: 20px;
+    color: $cTitle;
+    &::before {
+        content: "\f35a";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        font-weight: 900;
+        font-family: "Font Awesome 5 Free";
+
+    }
+}

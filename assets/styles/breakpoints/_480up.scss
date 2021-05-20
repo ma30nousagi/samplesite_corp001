@@ -1,0 +1,91 @@
+.header {
+    &__logo {
+
+    }
+}
+
+/*-------------------*/
+/* .openbtn */
+/*-------------------*/
+.openbtn {
+    width: 100px;
+}
+
+/*-------------------*/
+/* .news */
+/*-------------------*/
+.news {
+    &__panel {
+        &-img {
+            height: 300px;
+        }
+    }
+}
+
+
+/*-------------------*/
+/* .album */
+/*-------------------*/
+.album {
+    &__panel {
+        &__list {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        &-contents {
+            display: flex;
+            align-items: center;
+        }
+        &-img {
+            width: 40%;
+            height: 100%;
+        }
+        &-body {
+            width: 60%;
+            text-align: left;
+            padding: 0 20px;
+            color: $cGreen;
+        }
+    }
+}
+/*-------------------*/
+/* .subnews */
+/*-------------------*/
+.subnews {
+    &__heading {
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $cPink;
+        &::before {
+            content: attr(data-en);
+            display: block;
+            color: $cGreen;
+            font-size: 1.6rem;
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background-color: $cGreen;
+        }
+    }
+    // & >ul, li {
+    //     list-style: none;
+    // }
+    &__container {
+        background-color: rgba(255,255,255,0.9);
+        padding: 20px;
+        border-radius: 20px;
+    }
+    &__contents {
+        padding-left: 0;
+        width: 100%;
+        list-style: none;
+    }
+    &__list {
+        display: block;
+    }
+}
