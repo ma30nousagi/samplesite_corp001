@@ -741,6 +741,45 @@ body.appear .loader {
   font-weight: bold;
 }
 
+/*------------------------------
+	ニュースティッカー
+------------------------------*/
+.slider {
+  /*ニュース1行の周りの余白*/
+}
+
+.slider li > a {
+  display: block;
+  background: #fff;
+  padding: 10px 0;
+  /*日付*/
+}
+
+.slider li > a > time {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-right: 10px;
+  color: #777;
+}
+
+/*599px以下の見た目*/
+@media screen and (max-width: 599px) {
+  .slider {
+    padding: 20px;
+    background: #fff;
+  }
+  .slider > li {
+    border-bottom: 1px dashed #ccc;
+  }
+  .slider > li:last-child {
+    border-bottom: none;
+  }
+  .slider > li a > time {
+    display: block;
+    padding-bottom: 10px;
+  }
+}
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -772,9 +811,10 @@ html {
 }
 
 body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
   font-family: "Font Awesome 5 Free","Font Awesome 5 Brands",'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', sans-serif;
-  font-size: 13px;
-  font-size: 1.3rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   color: #323232;
   -webkit-font-feature-settings: "palt";
           font-feature-settings: "palt";
@@ -788,6 +828,7 @@ h1 {
 
 ul, ol, li {
   padding-left: 0;
+  list-style: none;
 }
 
 ul {
@@ -805,6 +846,13 @@ img {
   vertical-align: bottom;
 }
 
+figure {
+  margin: 0;
+}
+
+/*------------------------------
+	8.0 共通設定
+------------------------------*/
 .inner {
   max-width: 1280px;
   margin: 0 auto;
@@ -829,19 +877,19 @@ img {
   padding: 30px 70px;
 }
 
-.heading-primary {
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: .05px;
-  line-height: 1.5;
-}
-
-.pink {
-  color: #ffa0b4;
+#main-area {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0;
 }
 
 .wrapper {
   overflow: hidden;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 /*--------------------------------------------------------------
@@ -850,12 +898,7 @@ img {
 8.2  top-main
 8.3  global-nav
 8.3-1  pc-nav
-4.0  Structure
-5.0  Contents
-6.0  Elements
-7.0  Widgets
-8.0  Sections
-9.0  External Plugins
+
 --------------------------------------------------------------*/
 /*------------------------------
 	8.1 header
@@ -909,13 +952,13 @@ img {
   position: relative;
 }
 
-#top-main:before {
+#top-main::before {
   content: '';
   position: fixed;
   top: 10vh;
   left: 5%;
   z-index: -1;
-  width: 77%;
+  width: 90%;
   height: 80vh;
   /*背景画像設定*/
   background: url("/assets/images/top-img.jpg") top center;
@@ -933,22 +976,202 @@ img {
 ------------------------------*/
 .top-lead {
   position: fixed;
-  bottom: 20%;
-  left: 5%;
+  bottom: 5%;
+  left: 6%;
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: .3rem;
-  color: #8f76d6;
+  color: #5a189a;
   font-family: 'Roboto', sans-serif;
 }
 
-.top-lead span.bgLRextend::before {
+.top-lead > span.bgLRextend::before {
   background: #333;
 }
 
+/*------------------------------
+	8.6 topics
+------------------------------*/
+#topics {
+  border-left: 3px solid #000;
+  margin: 0 0 100px 0;
+  padding: 0 0 0 20px;
+}
+
+#topics > h2 > span.bgLRextend::before {
+  background: #333;
+}
+
+.bx-wrapper {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+/*------------------------------
+	8.7 vision 
+------------------------------*/
+#vision {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 0 50px 0;
+}
+
+#vision .img {
+  width: 100%;
+  min-height: 290px;
+  margin: 0 0 50px 0;
+  background: url("/assets/images/vision-img.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#vision .content {
+  width: 100%;
+  text-align: left;
+}
+
+#vision .content > h2 {
+  color: #5a189a;
+  margin: 0 0 30px 0;
+}
+
+#vision .content > p {
+  line-height: 2;
+  margin: 0 0 50px 0;
+  font-size: 1.2rem;
+}
+
+#vision .content .vision-lead {
+  position: relative;
+  color: #5a189a;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 0 0 90px 0;
+}
+
+#vision .content .vision-lead::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  background: #5a189a;
+  width: 12em;
+  height: 3px;
+}
+
+/*------------------------------
+	8.8 service 
+------------------------------*/
+#service h2 {
+  text-align: center;
+  margin: 0 0 50px 0;
+}
+
+#service h2 > span.bgLRextend::before {
+  background: #333;
+}
+
+#service .service-area {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 0 50px 0;
+}
+
+#service .service-area:nth-of-type(2n+1) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#service .service-area::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 23em;
+  background: #f3f3f3;
+  right: 10%;
+  top: 20%;
+  z-index: -1;
+}
+
+#service .service-area .img {
+  width: 100%;
+  z-index: 2;
+}
+
+#service .service-area .content {
+  width: 100%;
+  top: -10px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 20px #ccc;
+          box-shadow: 0 0 20px #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-animation: none;
+          animation: none;
+  opacity: 1;
+  z-index: 1;
+}
+
+#service .service-area .content-area {
+  padding: 40px;
+}
+
+#service .service-area .content-area > h3 {
+  text-align: center;
+  font-size: 1rem;
+  margin: 0 0 30px 0;
+}
+
+#service .service-area .content-area > h3 > span {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.2rem;
+}
+
+#service .service-area .content-area > p {
+  margin: 0 0 30px 0;
+}
+
+#service .btn {
+  text-align: right;
+}
+
+/*------------------------------
+	8.9 about 
+------------------------------*/
 @media (min-width: 600px) {
+  h2 {
+    font-size: 3.5rem;
+  }
   /*------------------------------
 	8.4 top-main
 ------------------------------*/
@@ -962,6 +1185,54 @@ img {
   .top-lead {
     bottom: 10%;
   }
+  /*------------------------------
+	8.7 vision
+------------------------------*/
+  #vision {
+    margin: 0 0 100px 0;
+  }
+  #vision .img {
+    width: 40%;
+    min-height: 590px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #vision .content {
+    width: 50%;
+    text-align: right;
+  }
+  #vision .vision-lead {
+    font-size: 1.3rem;
+  }
+  /*------------------------------
+	8.8 service 
+------------------------------*/
+  #service > h2 {
+    margin: 0 0 100px 0;
+  }
+  #service .service-area {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0 0 300px 0;
+  }
+  #service .service-area > .img {
+    width: 50%;
+  }
+  #service .service-area .content {
+    width: 40%;
+    top: 150px;
+  }
+  /*------------------------------
+	8.9 about 
+------------------------------*/
 }
 
 @media (min-width: 960px) {
@@ -1030,6 +1301,19 @@ img {
 ------------------------------*/
   .top-lead {
     font-size: 4rem;
+  }
+  /*------------------------------
+	8.6 topics
+------------------------------*/
+  /*------------------------------
+	8.8 service 
+------------------------------*/
+  #service h2 .service-area {
+    margin: 0 0 300px 0;
+  }
+  #service h2 .service-area .content {
+    width: 40%;
+    top: 150px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,7 @@
+h2 {
+    font-size: 3.5rem;
+}
+
 /*------------------------------
 	8.4 top-main
 ------------------------------*/
@@ -12,3 +16,54 @@
 .top-lead{
     bottom:10%;
 }
+
+/*------------------------------
+	8.7 vision
+------------------------------*/
+#vision {
+    margin:0 0 100px 0;
+
+    & .img{
+        width:40%;
+        min-height: 590px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    & .content {
+        width:50%; 
+        text-align: right;
+    }
+    & .vision-lead {
+        font-size: 1.3rem;
+    }
+}
+
+/*------------------------------
+	8.8 service 
+------------------------------*/
+#service {
+    & >h2{
+        margin:0 0 100px 0;
+    }
+    & .service-area{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin:0 0 300px 0;
+
+        & >.img {
+            width: 50%;
+        }
+        & .content {
+            width:40%;
+            top:150px;
+            
+        }
+    }
+}
+
+/*------------------------------
+	8.9 about 
+------------------------------*/

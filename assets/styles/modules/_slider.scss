@@ -1,0 +1,40 @@
+/*------------------------------
+	ニュースティッカー
+------------------------------*/
+
+
+.slider {
+    /*ニュース1行の周りの余白*/
+    & li>a {
+        display: block;
+        background:#fff;
+        padding:10px 0;
+        /*日付*/
+        & >time {
+            display:inline-block;
+            font-size:0.8rem;
+            margin-right:10px;
+            color:#777;
+        }
+    }
+}
+
+
+/*599px以下の見た目*/
+@media screen and (max-width:599px) {
+    .slider {
+        padding:20px;
+        background:#fff;
+        & >li {
+            border-bottom:1px dashed #ccc;
+            &:last-child {
+                border-bottom: none;
+            }
+            & a>time {
+                display:block;
+                padding-bottom:10px;
+            }
+        }
+        
+    }
+}
