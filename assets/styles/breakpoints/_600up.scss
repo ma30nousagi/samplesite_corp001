@@ -67,3 +67,16 @@ h2 {
 /*------------------------------
 	8.9 about 
 ------------------------------*/
+.about {
+    &__list {
+        display: flex;
+        & >li {
+            &:not(:last-child) {
+                margin: 0 20px 0 0;
+            }
+        }
+        &-area {
+            height: 180px;
+        }
+    }
+}

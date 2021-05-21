@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>SocketWEB</title>
+<meta name="description"  content="コーポレートサイトのサンプルサイトです。">
+<meta name="keywords"  content="">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- ニュースティッカー -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css">
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/styles/style.css">
+<!-- animate CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" />
+<!-- favicon -->
+<!-- <link rel="shortcut icon" href="/assets/images/m_favicon.ico"> -->
+<!-- normalize CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+<!-- font awesome CSS -->
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<!-- google font -->
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Noto+Sans+JP&family=Varela+Round&family=Yusei+Magic&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<!-- swiper css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.4/swiper-bundle.min.css" integrity="sha512-Uny/q0WcgHTmPEwEnudIstSn9ITJ5A4M69WwQ8kii9QmCKfIgwLZQjEo7W0O4yZpamS29cJP0LGrPqFBEzINIw==" crossorigin="anonymous" />
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="wrapper" class="wrapper">
+    <header id="header">
+    <h1><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger"><img src="assets/images/logo/socketwebnet_logo.png" alt="socketwebのロゴ"></span></span></a></h1>
+        
+    <nav id="pc-nav">
+            <ul>
+                <li><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">企業理念</span></span></a></li>
+                <li><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">事業内容</span></span></a></li>
+                <li><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">会社概要</span></span></a></li>
+                <li><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">Faq</span></span></a></li>
+                <li><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">お問い合わせ</span></span></a></li>
+            </ul>
+    </nav>   
+    </header>
+<div id="container">
+    <main id="main-area">
+    <section id="about" class="scroll-point about">
+        <h2 class="heading" data-en="About">
+            <span class="bgextend bgLRextendTrigger">
+                <span class="bgappearTrigger">会社概要</span>
+            </span>
+        </h2>
+        <ul class="about__list fadeUpTrigger">
+            <li>
+                <section class="fadeInTrigger">
+                    <a href="">
+                        <figure class="circle">
+                            <span class="mask">
+                                <img src="/assets/images/ceo-img.png" alt="">
+                            </span>
+                        </figure>
+                        <div class="about__list-area">
+                            <h3>代表あいさつ</h3>
+                            <p>当社代表からSocketwebの<br>今後について</p>
+                            <div class="btn"><a href="#" class="btnlinestretches3"><span>詳細ページ</span></a></div>
+                        </div>
+                    </a>
+                </section>
+            </li>
+            <li>
+                <section class="fadeInTrigger">
+                    <a href="">
+                        <figure class="circle">
+                            <span class="mask">
+                                <img src="/assets/images/company-img.png" alt="">
+                            </span>
+                        </figure>
+                        <div class="about__list-area">
+                            <h3>会社情報</h3>
+                            <p>SocketWEBの会社概要</p>
+                            <div class="btn"><a href="#" class="btnlinestretches3"><span>詳細ページ</span></a></div>
+                        </div>
+                    </a>
+                </section>
+            </li>
+        </ul>
+        
+        <ul class="about-list fadeUpTrigger">
+            <li>
+            <dl>
+                <dt>会社名</dt><dd>SocketWEB</dd>
+            </dl>
+            </li>
+            <li>
+            <dl>
+                <dt>設立</dt><dd>2021年3月</dd>
+            </dl>
+            </li>
+            <li>
+            <dl>
+                <dt>資本金</dt><dd>2000万円</dd>
+            </dl>
+            </li>
+            <li>
+            <dl>
+                <dt>代表</dt><dd>鈴木宗人</dd>
+            </dl>
+            </li>
+            <li>
+            <dl>
+                <dt>所在地</dt><dd>〒100-0000 東京都港区1丁目1番1号</dd>
+            </dl>
+            </li>
+            <li>
+            <dl>
+                <dt>電話</dt><dd>03-1234-5678</dd>
+            </dl>
+            </li>
+            <li>
+            <dl>
+                <dt>主な取引先</dt><dd>株式会社Webマーケット<br>Y&amp;YCorp<br>コンテンツ株式会社</dd>
+            </dl>
+            </li>
+        </ul>
+    </section><!-- #about -->
+    </main>
+<!--/container--></div>	
+</div><!-- /wrapper -->
+<footer id="footer">
+
+<div class="openbtn"><span></span><span>Menu</span><span></span></div>
+<div id="g-nav">
+<div id="g-nav-list">
+        <ul>
+            <li><a href="#vision">企業理念</a></li>
+            <li><a href="#service">事業内容</a></li>
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="tel:03-1234-5678">TEL : 03-1234-5678</a></li>
+        </ul>
+</div>
+</div> 
+    <p class="footer-logo"><img src="assets/images/logo/socketwebnet_logo.png" alt=""></p>
+    <small>&copy; SocketWEB</small>
+    <p id="page-top"><a href="#">Top</a></p>	
+</footer>
+<!--/wrapper--></div>
+   
+<!--=============JS ===============--> 
+<!-- ニュースティッカー -->   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+<!-- scrollgress -->  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollgress/2.0.0/scrollgress.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.4/swiper-bundle.min.js" integrity="sha512-hQQhpacNvYwkN+PyMQghLPCql/6OQfWNKVUkpW0KgCB5XjqtIkxm8UYny+gTjvIfvE/CrqrKEUOLotbHBFs/0Q==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+<script src="js/scroll-polyfill.js"></script>
+<script src="js/scroll.js"></script>
+<script src="/assets/js/function.js"></script>    
+</body>
+</html>

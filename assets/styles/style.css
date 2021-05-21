@@ -826,6 +826,10 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
 ul, ol, li {
   padding-left: 0;
   list-style: none;
@@ -887,9 +891,44 @@ figure {
   overflow: hidden;
 }
 
+/*------------------------------
+	h2 .heading 見出し
+------------------------------*/
 h2 {
   font-size: 2.5rem;
   font-weight: 700;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.heading::before {
+  position: absolute;
+  content: attr(data-en);
+  top: -20px;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+          transform: translatex(-50%);
+  display: block;
+  color: #5a189a;
+  font-size: 1rem;
+}
+
+.heading::after {
+  position: absolute;
+  content: '';
+  bottom: -10px;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+          transform: translatex(-50%);
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: #5a189a;
 }
 
 /*--------------------------------------------------------------
@@ -1073,12 +1112,12 @@ h2 {
 /*------------------------------
 	8.8 service 
 ------------------------------*/
-#service h2 {
+#service > h2 {
   text-align: center;
   margin: 0 0 50px 0;
 }
 
-#service h2 > span.bgLRextend::before {
+#service > h2 > span.bgLRextend::before {
   background: #333;
 }
 
@@ -1168,6 +1207,42 @@ h2 {
 /*------------------------------
 	8.9 about 
 ------------------------------*/
+.about > h2 {
+  text-align: center;
+  margin: 0 0 50px 0;
+}
+
+.about > h2 > span {
+  color: #333;
+}
+
+.about__list > li {
+  -webkit-box-shadow: 0 0 20px #ccc;
+          box-shadow: 0 0 20px #ccc;
+}
+
+.about__list > li:not(:last-child) {
+  margin: 0 0 30px 0;
+}
+
+.about__list-area {
+  text-align: center;
+  background: #f2f2f2;
+  padding: 10px 40px 40px 40px;
+}
+
+.about__list-area > h3 {
+  margin: 0 0 30px 0;
+}
+
+.about__list-area > p {
+  margin: 0 0 30px 0;
+}
+
+.about__list-area .btn {
+  text-align: right;
+}
+
 @media (min-width: 600px) {
   h2 {
     font-size: 3.5rem;
@@ -1233,6 +1308,17 @@ h2 {
   /*------------------------------
 	8.9 about 
 ------------------------------*/
+  .about__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .about__list > li:not(:last-child) {
+    margin: 0 20px 0 0;
+  }
+  .about__list-area {
+    height: 180px;
+  }
 }
 
 @media (min-width: 960px) {
