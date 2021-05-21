@@ -1,3 +1,18 @@
+
+/*------------------------------
+	8.1 header
+------------------------------*/
+#header {
+    justify-content: center;
+    height: 100px;
+    & >h1 {
+    font-size: 1.5rem;
+    top: 0%;/*基準値40%*/
+    line-height: 1;
+    letter-spacing: 0.2em;
+    }
+}
+
 /*------------------------------
 	8.3 pc-nav
 ------------------------------*/
@@ -7,4 +22,44 @@
 
 #pc-nav span.bgLRextend::before{
     background:#333;
+}
+
+#pc-nav ul{
+	list-style: none;
+	display: flex;
+	justify-content: center;
+    text-transform: uppercase;
+    margin: 0 0 0 5%;
+    & >li {
+        white-space: nowrap;
+        & >a {
+            display: block;
+	        text-decoration: none;
+	        color: #333;
+            font-weight: 700;
+	        padding:0 15px;
+	        transition:all 0.3s;
+        }
+    }
+}
+
+#pc-nav li.current a,
+#pc-nav li a:hover{
+	color:#eb6100;	
+}
+
+/*------------------------------
+	8.4 top-main
+------------------------------*/
+#top-main:before{
+    width: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*------------------------------
+	8.5 top-lead
+------------------------------*/
+.top-lead{
+    font-size:4rem;
 }

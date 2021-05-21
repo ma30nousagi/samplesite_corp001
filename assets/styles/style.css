@@ -150,6 +150,50 @@
   left: -5%;
 }
 
+.btnlinestretches3 {
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+  /*ボタンの形状*/
+  color: #333;
+  padding: 5px 30px;
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+}
+
+/*テキストの設定*/
+.btnlinestretches3 span {
+  /*テキストを前面に出すためz-indexの値を高く設定*/
+  position: relative;
+  z-index: 2;
+}
+
+.btnlinestretches3:hover span {
+  color: #fff;
+}
+
+/*線の設定*/
+.btnlinestretches3::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  /*線の形状*/
+  background: #333;
+  width: 100%;
+  height: 3px;
+  /*アニメーションの指定*/
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/*線が伸びて背景に*/
+.btnlinestretches3:hover::after {
+  height: 100%;
+}
+
 .openbtn {
   position: relative;
   background: #ffa0b4;
@@ -750,6 +794,12 @@ ul {
   margin-bottom: 0;
 }
 
+a {
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
 img {
   max-width: 100%;
   vertical-align: bottom;
@@ -810,6 +860,29 @@ img {
 /*------------------------------
 	8.1 header
 ------------------------------*/
+#header {
+  position: fixed;
+  /*header固定*/
+  height: 75px;
+  width: 100%;
+  z-index: 9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+}
+
+#header > h1 {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 0%;
+  /*基準値32%*/
+  left: 5%;
+}
+
 /*------------------------------
 	8.3 global-nav
 ------------------------------*/
@@ -827,98 +900,87 @@ img {
   display: none;
 }
 
+/*------------------------------
+	8.4 top-main
+------------------------------*/
+#top-main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#top-main:before {
+  content: '';
+  position: fixed;
+  top: 10vh;
+  left: 5%;
+  z-index: -1;
+  width: 77%;
+  height: 80vh;
+  /*背景画像設定*/
+  background: url("/assets/images/top-img.jpg") top center;
+  background-size: auto 110%;
+}
+
+#container {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+
+/*------------------------------
+	8.5 top-lead
+------------------------------*/
 .top-lead {
   position: fixed;
-  bottom: 10%;
+  bottom: 20%;
   left: 5%;
   font-size: 3rem;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.5;
+  letter-spacing: .3rem;
+  color: #8f76d6;
+  font-family: 'Roboto', sans-serif;
 }
 
-@media (min-width: 480px) {
-  /*-------------------*/
-  /* .openbtn */
-  /*-------------------*/
-  .openbtn {
-    width: 100px;
-  }
-  /*-------------------*/
-  /* .news */
-  /*-------------------*/
-  .news__panel-img {
-    height: 300px;
-  }
-  /*-------------------*/
-  /* .album */
-  /*-------------------*/
-  .album__panel__list {
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .album__panel-contents {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .album__panel-img {
-    width: 40%;
-    height: 100%;
-  }
-  .album__panel-body {
-    width: 60%;
-    text-align: left;
-    padding: 0 20px;
-    color: #60D8D6;
-  }
-  /*-------------------*/
-  /* .subnews */
-  /*-------------------*/
-  .subnews__title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ffa0b4;
-  }
-  .subnews__title::before {
-    content: attr(data-en);
-    display: block;
-    color: #60D8D6;
-    font-size: 1.6rem;
-  }
-  .subnews__title::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background-color: #60D8D6;
-  }
-  .subnews__container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 20px;
-  }
-  .subnews__contents {
-    padding-left: 0;
-    width: 100%;
-    list-style: none;
-  }
-  .subnews__list {
-    display: block;
-  }
+.top-lead span.bgLRextend::before {
+  background: #333;
 }
 
 @media (min-width: 600px) {
+  /*------------------------------
+	8.4 top-main
+------------------------------*/
   #top-main:before {
     background-position: no-repeat center;
     background-size: auto cover;
   }
+  /*------------------------------
+	8.5 top-lead
+------------------------------*/
+  .top-lead {
+    bottom: 10%;
+  }
 }
 
 @media (min-width: 960px) {
+  /*------------------------------
+	8.1 header
+------------------------------*/
+  #header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100px;
+  }
+  #header > h1 {
+    font-size: 1.5rem;
+    top: 0%;
+    /*基準値40%*/
+    line-height: 1;
+    letter-spacing: 0.2em;
+  }
   /*------------------------------
 	8.3 pc-nav
 ------------------------------*/
@@ -927,6 +989,47 @@ img {
   }
   #pc-nav span.bgLRextend::before {
     background: #333;
+  }
+  #pc-nav ul {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-transform: uppercase;
+    margin: 0 0 0 5%;
+  }
+  #pc-nav ul > li {
+    white-space: nowrap;
+  }
+  #pc-nav ul > li > a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    padding: 0 15px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #pc-nav li.current a,
+  #pc-nav li a:hover {
+    color: #eb6100;
+  }
+  /*------------------------------
+	8.4 top-main
+------------------------------*/
+  #top-main:before {
+    width: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /*------------------------------
+	8.5 top-lead
+------------------------------*/
+  .top-lead {
+    font-size: 4rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
