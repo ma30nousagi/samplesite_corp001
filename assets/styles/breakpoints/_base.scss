@@ -52,7 +52,7 @@ ul {
     margin-bottom: 0;
 }
 a {
-    color: #333;
+    color: $cBlack;
 	text-decoration: none;
     outline: none;
 }
@@ -93,7 +93,7 @@ figure {
     padding: 30px 70px;
 }
 
-#main-area{
+.main-area{
     width:90%;
     margin:0 auto;
     padding: 50px 0; 
@@ -123,7 +123,7 @@ h2 {
         left: 50%;
         transform: translatex(-50%);
         display: block;
-        color: $cPurple;
+        color: rgba(243, 152, 0, 0.5);
         font-size: 1rem;
     }
     &::after {
@@ -135,7 +135,7 @@ h2 {
         display: block;
         width: 40px;
         height: 1px;
-        background-color: $cPurple;
+        background-color: $cBlack;
     }
 }
 /*--------------------------------------------------------------
@@ -149,7 +149,7 @@ h2 {
 /*------------------------------
 	8.1 header
 ------------------------------*/
-#header{
+.header{
 	position: fixed;/*header固定*/
 	height: 75px;
 	width:100%;
@@ -160,8 +160,12 @@ h2 {
     & >h1 {
         position: absolute;
         font-size:1.2rem;
-        top: 0%;/*基準値32%*/
+        top: 20%;/*基準値32%*/
         left: 5%;
+    }
+    &__img {
+        width: 50%;
+        height: auto;
     }
 }
 
@@ -170,25 +174,25 @@ h2 {
 
 
 /*------------------------------
-	8.3 global-nav
+	8.3 g-nav
 ------------------------------*/
-#g-nav.panelactive li:last-child a{
+.g-nav.panelactive li:last-child a{
     margin: 30px 0 0 0;
     padding: 10px 20px;
-    border: 2px solid #333;
+    border: 2px solid $cBlack;
     white-space: nowrap;
 }
 /*------------------------------
 	8.3-1 pc-nav
 ------------------------------*/
-#pc-nav{
+.pc-nav{
     display: none;
 }
 
 /*------------------------------
 	8.4 top-main
 ------------------------------*/
-#top-main{
+.top-main{
 	width:100%;
 	height: 100vh;
 	position: relative;
@@ -200,14 +204,15 @@ h2 {
 	    left:5%;
 	    z-index:-1;
 	    width: 90%;
-	    height: 80vh;
+	    height: 75vh;
 	    /*背景画像設定*/
+        background-attachment: fixed;
 	    background: url("/assets/images/top-img.jpg") top center;
-	    background-size: auto 110%;
+	    background-size: cover;
     }
 } 
 
-#container{
+.container{
 	position: relative;
 	z-index:1;
 	background:#fff;
@@ -225,24 +230,24 @@ h2 {
     font-weight: 700;
     line-height: 1.5;
     letter-spacing: .3rem;
-    color: $cPurple;
+    color: $cOrange;
     font-family: 'Roboto', sans-serif;
     & >span.bgLRextend::before{
-        background:#333;
+        background:$cBlack;
     }
 }
 
 /*------------------------------
 	8.6 topics
 ------------------------------*/
-#topics{
+.topics{
     border-left:3px solid #000;
     margin:0 0 100px 0;
     padding: 0 0 0 20px;
 
     & >h2 {
         & >span.bgLRextend::before {
-            background:#333;
+            background:$cBlack;
         }
     }
 }
@@ -256,7 +261,7 @@ h2 {
 /*------------------------------
 	8.7 vision 
 ------------------------------*/
-#vision {
+.vision {
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -273,7 +278,7 @@ h2 {
         width: 100%;
         text-align: left;
         & >h2 {
-            color: $cPurple;
+            color: $cOrange;
             margin:0 0 30px 0;
         }
         & >p {
@@ -283,7 +288,7 @@ h2 {
         }
         & .vision-lead {
             position: relative;
-            color: $cPurple;
+            color: $cOrange;
             font-size:1.7rem;
             font-weight: bold;
             margin: 0 0 90px 0;
@@ -292,7 +297,7 @@ h2 {
                 position: absolute;
                 bottom:-30px;
                 right:0;
-                background:$cPurple;
+                background:$cOrange;
                 width:12em;
                 height: 3px;
             }
@@ -303,12 +308,12 @@ h2 {
 /*------------------------------
 	8.8 service 
 ------------------------------*/
-#service {
+.service {
     & >h2 {
         text-align: center;
         margin:0 0 50px 0;
         & >span.bgLRextend::before {
-            background:#333;
+            background:$cBlack;
         }
     }
     & .service-area{
@@ -325,7 +330,7 @@ h2 {
             position: absolute;
             width: 70%;
             height: 23em;
-            background:#f3f3f3;
+            background:rgba(243, 152, 0, 0.5);
             right:10%;
             top:20%;
             z-index: -1;
@@ -374,11 +379,12 @@ h2 {
 	8.9 about 
 ------------------------------*/
 .about {
+    margin: 0 0 50px 0;
     & >h2 {
         text-align: center;
         margin:0 0 50px 0;
         & >span {
-            color: #333;
+            color: $cBlack;
         }
     }
     &__list {
@@ -405,4 +411,152 @@ h2 {
     }
 }
 
+/*------------------------------
+	8.10 contact 
+------------------------------*/
+.contact {
+    margin: 0 0 50px 0;
+    & >h2 {
+        margin:0 0 50px 0;
+    }
+    &__area {
+        text-align: center;
+        background: #f2f2f2;
+        padding: 10px 40px 40px 40px;
+        & .btn {
+            text-align: right;
+        }
+    }
+}
 
+
+
+
+/*------------------------------
+	8.11 footer 
+------------------------------*/
+.footer {
+    position: relative;//top-main背景を隠す
+    padding: 50px 0;
+    background: #ccc;
+    border-top: 3px solid rgba(243, 152, 0, 0.5);
+    text-align: center;
+    &__logo {
+        text-align: center;
+        margin: 0 0 50px 0;
+        & >img {
+            width: 40%;
+            height: auto;
+        }
+    }
+    &__accordion {
+        margin: 0 auto 50px auto;
+        padding: 20px 10px;
+        width: 94%;
+        text-align: left;
+        // background: #f2f2f2;
+        & >li {
+            // margin: 10px 0;
+            background: #fff;
+            border-bottom: 1px solid $cBlack;
+            &:first-child {
+                border-top: 1px solid $cBlack;
+            }
+            // & .none {
+            //     padding:20px 10px 10px 20px;
+            //     margin: 0;
+            // }
+            & >h3 {
+                padding:20px 10px 10px 20px;
+                margin: 0;
+            }
+            & >section {
+                // border: 1px solid $cBlack;
+                & .c-footer-heading {
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                    padding:20px 10px 10px 20px;
+                    margin: 0;
+                    transition: all .5s ease;
+                    &::before,&::after {
+                        position: absolute;
+                        content: '';
+                        width: 15px;
+                        height: 2px;
+                        background-color: $cBlack;
+                    }
+                    &::before {
+                        top: 48%;
+                        right: 15px;
+                        transform: rotate(0deg);
+
+                    }
+                    &::after {
+                        top: 48%;
+                        right: 15px;
+                        transform: rotate(90deg);
+                    }
+                    &.close::before {
+                        transform: rotate(45deg);
+                    }
+                    &.close::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+                & .box {
+                    display: none;
+                    & >p {
+                        padding: 0 0 0 30px;
+                        position: relative;
+                        &::before {
+                            content: '-';
+                            position: absolute;
+                            top: 50%;
+                            left:10px;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__pc {
+        display: none;
+    }
+    &__sns {
+        margin: 0 0 50px 0;
+        &-title {
+            text-align: center;
+        }
+        &-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        &-item {
+            &:not(:last-child) {
+                margin: 0 15px 0 0;
+            }
+        }
+        &-link {
+            position: relative;
+            font-size: 2rem;
+            & i.fa-twitter {
+                color: #55acee;
+            }
+            & i.fa-line {
+                color: #00b900;
+            }
+            & i.fa-youtube {
+                color: red;
+            }
+            & i.fa-facebook-f {
+                color: #3b5a9a;
+            }
+            & i.fa-instagram {
+                color: #000;
+            }
+        }
+    }
+}

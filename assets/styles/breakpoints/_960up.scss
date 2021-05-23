@@ -2,12 +2,12 @@
 /*------------------------------
 	8.1 header
 ------------------------------*/
-#header {
+.header {
     justify-content: center;
     height: 100px;
     & >h1 {
     font-size: 1.5rem;
-    top: 0%;/*基準値40%*/
+    top: 30%;/*基準値40%*/
     line-height: 1;
     letter-spacing: 0.2em;
     }
@@ -16,15 +16,15 @@
 /*------------------------------
 	8.3 pc-nav
 ------------------------------*/
-#pc-nav {
+.pc-nav {
     display: block;
 }
 
-#pc-nav span.bgLRextend::before{
-    background:#333;
+.pc-nav span.bgLRextend::before{
+    background:$cBlack;
 }
 
-#pc-nav ul{
+.pc-nav ul{
 	list-style: none;
 	display: flex;
 	justify-content: center;
@@ -33,25 +33,49 @@
     & >li {
         white-space: nowrap;
         & >a {
+            position: relative;
             display: block;
 	        text-decoration: none;
-	        color: #333;
+	        color: $cBlack;
             font-weight: 700;
 	        padding:0 15px;
 	        transition:all 0.3s;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 10%;
+                width: 80%;
+                height: 2px;
+                background: $cBlack;
+                transition: all .3s;
+                transform: scale(0, 1);
+                transform-origin: left top;
+            }
         }
     }
 }
 
-#pc-nav li.current a,
-#pc-nav li a:hover{
-	color:#eb6100;	
+.pc-nav li.current a,
+.pc-nav li a:hover::after{
+	// color: $cPurple;	
+    transform: scale(1, 1);
+}
+
+/*------------------------------
+	8.3 g-nav
+------------------------------*/
+.openbtn {
+    display: none;
+}
+.g-nav{
+    display: none;
 }
 
 /*------------------------------
 	8.4 top-main
 ------------------------------*/
-#top-main:before{
+.top-main:before{
     width: 90%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,13 +98,89 @@
 /*------------------------------
 	8.8 service 
 ------------------------------*/
-#service h2{
+.service h2{
     & .service-area{
         margin:0 0 300px 0;
 
         & .content {
             width:40%;
             top:150px;
+        }
+    }
+}
+
+
+/*------------------------------
+	8.9 about 
+------------------------------*/
+.about {
+    margin: 0 0 100px 0;
+}
+
+/*------------------------------
+	8.10 contact 
+------------------------------*/
+.contact {
+    margin: 0 0 100px 0;
+}
+
+
+/*------------------------------
+	8.11 footer 
+------------------------------*/
+.footer {
+    &__logo {
+        & >img {
+            width: 15%;
+            height: auto;
+        }
+    }
+    &__accordion {
+        display: none;
+    }
+    &__pc {
+        display: flex;
+        margin: 0 auto 100px auto;
+        & >li {
+            border: none;
+            width: calc(100%/5);
+            background: inherit;
+            &:first-child {
+                border: none;
+            }
+            & >h3 {
+                font-size: 1.8rem;//リンクなしの箇所
+            }
+            & >section {
+                & >h3 {
+                    position: relative;
+                    font-size: 1.8rem;
+                    padding:20px 10px 10px 20px;
+                    margin: 0;
+                    transition: all .5s ease;
+                    &::before,&::after {
+                        display: none;
+                    }
+                }
+                & .box {
+                    display: block;
+                    & >p {
+                        padding: 0 0 0 30px;
+                        position: relative;
+                        text-align: left;
+                        top: 0;
+                        left: 24%;
+                        // transform: translateY(-50%);
+                        &::before {
+                            content: '-';
+                            position: absolute;
+                            top: 50%;
+                            left:10px;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
         }
     }
 }

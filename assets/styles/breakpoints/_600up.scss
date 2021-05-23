@@ -5,7 +5,7 @@ h2 {
 /*------------------------------
 	8.4 top-main
 ------------------------------*/
-#top-main:before{
+.top-main:before{
     background-position: no-repeat center;
     background-size:auto cover;
 }
@@ -20,7 +20,7 @@ h2 {
 /*------------------------------
 	8.7 vision
 ------------------------------*/
-#vision {
+.vision {
     margin:0 0 100px 0;
 
     & .img{
@@ -42,7 +42,7 @@ h2 {
 /*------------------------------
 	8.8 service 
 ------------------------------*/
-#service {
+.service {
     & >h2{
         margin:0 0 100px 0;
     }

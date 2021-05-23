@@ -195,11 +195,10 @@
 }
 
 .openbtn {
-  position: relative;
-  background: #ffa0b4;
+  position: fixed;
   cursor: pointer;
-  top: 0;
-  right: 20px;
+  top: 10px;
+  right: 0;
   width: 100px;
   height: 50px;
   padding: 2px;
@@ -215,17 +214,17 @@
   left: 14px;
   height: 3px;
   border-radius: 2px;
-  background: #fff;
+  background: #141465;
 }
 
 .openbtn > span:nth-of-type(1) {
   top: 15px;
-  width: 45%;
+  width: 40%;
 }
 
 .openbtn > span:nth-of-type(2) {
   top: 23px;
-  width: 35%;
+  width: 30%;
 }
 
 .openbtn > span:nth-of-type(3) {
@@ -780,6 +779,104 @@ body.appear .loader {
   }
 }
 
+#page-top {
+  position: fixed;
+  bottom: -2%;
+  right: 0;
+  z-index: 10;
+  opacity: 0;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+}
+
+#page-top > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #141465;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8rem;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#page-top > a:hover {
+  background: #e07c18;
+}
+
+#page-top.UpMove {
+  -webkit-animation: UpAnime 0.5s forwards;
+          animation: UpAnime 0.5s forwards;
+}
+
+@-webkit-keyframes UpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes UpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+#page-top.DownMove {
+  -webkit-animation: DownAnime 0.5s forwards;
+          animation: DownAnime 0.5s forwards;
+}
+
+@-webkit-keyframes DownAnime {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+}
+
+@keyframes DownAnime {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+}
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -881,7 +978,7 @@ figure {
   padding: 30px 70px;
 }
 
-#main-area {
+.main-area {
   width: 90%;
   margin: 0 auto;
   padding: 50px 0;
@@ -914,7 +1011,7 @@ h2 {
   -webkit-transform: translatex(-50%);
           transform: translatex(-50%);
   display: block;
-  color: #5a189a;
+  color: rgba(243, 152, 0, 0.5);
   font-size: 1rem;
 }
 
@@ -928,7 +1025,7 @@ h2 {
   display: block;
   width: 40px;
   height: 1px;
-  background-color: #5a189a;
+  background-color: #333;
 }
 
 /*--------------------------------------------------------------
@@ -942,7 +1039,7 @@ h2 {
 /*------------------------------
 	8.1 header
 ------------------------------*/
-#header {
+.header {
   position: fixed;
   /*header固定*/
   height: 75px;
@@ -957,18 +1054,23 @@ h2 {
   background: #fff;
 }
 
-#header > h1 {
+.header > h1 {
   position: absolute;
   font-size: 1.2rem;
-  top: 0%;
+  top: 20%;
   /*基準値32%*/
   left: 5%;
 }
 
+.header__img {
+  width: 50%;
+  height: auto;
+}
+
 /*------------------------------
-	8.3 global-nav
+	8.3 g-nav
 ------------------------------*/
-#g-nav.panelactive li:last-child a {
+.g-nav.panelactive li:last-child a {
   margin: 30px 0 0 0;
   padding: 10px 20px;
   border: 2px solid #333;
@@ -978,33 +1080,34 @@ h2 {
 /*------------------------------
 	8.3-1 pc-nav
 ------------------------------*/
-#pc-nav {
+.pc-nav {
   display: none;
 }
 
 /*------------------------------
 	8.4 top-main
 ------------------------------*/
-#top-main {
+.top-main {
   width: 100%;
   height: 100vh;
   position: relative;
 }
 
-#top-main::before {
+.top-main::before {
   content: '';
   position: fixed;
   top: 10vh;
   left: 5%;
   z-index: -1;
   width: 90%;
-  height: 80vh;
+  height: 75vh;
   /*背景画像設定*/
+  background-attachment: fixed;
   background: url("/assets/images/top-img.jpg") top center;
-  background-size: auto 110%;
+  background-size: cover;
 }
 
-#container {
+.container {
   position: relative;
   z-index: 1;
   background: #fff;
@@ -1022,7 +1125,7 @@ h2 {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: .3rem;
-  color: #5a189a;
+  color: #e07c18;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -1033,13 +1136,13 @@ h2 {
 /*------------------------------
 	8.6 topics
 ------------------------------*/
-#topics {
+.topics {
   border-left: 3px solid #000;
   margin: 0 0 100px 0;
   padding: 0 0 0 20px;
 }
 
-#topics > h2 > span.bgLRextend::before {
+.topics > h2 > span.bgLRextend::before {
   background: #333;
 }
 
@@ -1052,7 +1155,7 @@ h2 {
 /*------------------------------
 	8.7 vision 
 ------------------------------*/
-#vision {
+.vision {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1067,7 +1170,7 @@ h2 {
   margin: 0 0 50px 0;
 }
 
-#vision .img {
+.vision .img {
   width: 100%;
   min-height: 290px;
   margin: 0 0 50px 0;
@@ -1075,36 +1178,36 @@ h2 {
   background-size: cover;
 }
 
-#vision .content {
+.vision .content {
   width: 100%;
   text-align: left;
 }
 
-#vision .content > h2 {
-  color: #5a189a;
+.vision .content > h2 {
+  color: #e07c18;
   margin: 0 0 30px 0;
 }
 
-#vision .content > p {
+.vision .content > p {
   line-height: 2;
   margin: 0 0 50px 0;
   font-size: 1.2rem;
 }
 
-#vision .content .vision-lead {
+.vision .content .vision-lead {
   position: relative;
-  color: #5a189a;
+  color: #e07c18;
   font-size: 1.7rem;
   font-weight: bold;
   margin: 0 0 90px 0;
 }
 
-#vision .content .vision-lead::after {
+.vision .content .vision-lead::after {
   content: '';
   position: absolute;
   bottom: -30px;
   right: 0;
-  background: #5a189a;
+  background: #e07c18;
   width: 12em;
   height: 3px;
 }
@@ -1112,16 +1215,16 @@ h2 {
 /*------------------------------
 	8.8 service 
 ------------------------------*/
-#service > h2 {
+.service > h2 {
   text-align: center;
   margin: 0 0 50px 0;
 }
 
-#service > h2 > span.bgLRextend::before {
+.service > h2 > span.bgLRextend::before {
   background: #333;
 }
 
-#service .service-area {
+.service .service-area {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1134,30 +1237,30 @@ h2 {
   margin: 0 0 50px 0;
 }
 
-#service .service-area:nth-of-type(2n+1) {
+.service .service-area:nth-of-type(2n+1) {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }
 
-#service .service-area::after {
+.service .service-area::after {
   content: '';
   position: absolute;
   width: 70%;
   height: 23em;
-  background: #f3f3f3;
+  background: rgba(243, 152, 0, 0.5);
   right: 10%;
   top: 20%;
   z-index: -1;
 }
 
-#service .service-area .img {
+.service .service-area .img {
   width: 100%;
   z-index: 2;
 }
 
-#service .service-area .content {
+.service .service-area .content {
   width: 100%;
   top: -10px;
   background: #fff;
@@ -1179,34 +1282,38 @@ h2 {
   z-index: 1;
 }
 
-#service .service-area .content-area {
+.service .service-area .content-area {
   padding: 40px;
 }
 
-#service .service-area .content-area > h3 {
+.service .service-area .content-area > h3 {
   text-align: center;
   font-size: 1rem;
   margin: 0 0 30px 0;
 }
 
-#service .service-area .content-area > h3 > span {
+.service .service-area .content-area > h3 > span {
   font-weight: bold;
   text-transform: uppercase;
   display: block;
   font-size: 1.2rem;
 }
 
-#service .service-area .content-area > p {
+.service .service-area .content-area > p {
   margin: 0 0 30px 0;
 }
 
-#service .btn {
+.service .btn {
   text-align: right;
 }
 
 /*------------------------------
 	8.9 about 
 ------------------------------*/
+.about {
+  margin: 0 0 50px 0;
+}
+
 .about > h2 {
   text-align: center;
   margin: 0 0 50px 0;
@@ -1243,6 +1350,180 @@ h2 {
   text-align: right;
 }
 
+/*------------------------------
+	8.10 contact 
+------------------------------*/
+.contact {
+  margin: 0 0 50px 0;
+}
+
+.contact > h2 {
+  margin: 0 0 50px 0;
+}
+
+.contact__area {
+  text-align: center;
+  background: #f2f2f2;
+  padding: 10px 40px 40px 40px;
+}
+
+.contact__area .btn {
+  text-align: right;
+}
+
+/*------------------------------
+	8.11 footer 
+------------------------------*/
+.footer {
+  position: relative;
+  padding: 50px 0;
+  background: #ccc;
+  border-top: 3px solid rgba(243, 152, 0, 0.5);
+  text-align: center;
+}
+
+.footer__logo {
+  text-align: center;
+  margin: 0 0 50px 0;
+}
+
+.footer__logo > img {
+  width: 40%;
+  height: auto;
+}
+
+.footer__accordion {
+  margin: 0 auto 50px auto;
+  padding: 20px 10px;
+  width: 94%;
+  text-align: left;
+}
+
+.footer__accordion > li {
+  background: #fff;
+  border-bottom: 1px solid #333;
+}
+
+.footer__accordion > li:first-child {
+  border-top: 1px solid #333;
+}
+
+.footer__accordion > li > h3 {
+  padding: 20px 10px 10px 20px;
+  margin: 0;
+}
+
+.footer__accordion > li > section .c-footer-heading {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 20px 10px 10px 20px;
+  margin: 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.footer__accordion > li > section .c-footer-heading::before, .footer__accordion > li > section .c-footer-heading::after {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 2px;
+  background-color: #333;
+}
+
+.footer__accordion > li > section .c-footer-heading::before {
+  top: 48%;
+  right: 15px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.footer__accordion > li > section .c-footer-heading::after {
+  top: 48%;
+  right: 15px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.footer__accordion > li > section .c-footer-heading.close::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.footer__accordion > li > section .c-footer-heading.close::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.footer__accordion > li > section .box {
+  display: none;
+}
+
+.footer__accordion > li > section .box > p {
+  padding: 0 0 0 30px;
+  position: relative;
+}
+
+.footer__accordion > li > section .box > p::before {
+  content: '-';
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.footer__pc {
+  display: none;
+}
+
+.footer__sns {
+  margin: 0 0 50px 0;
+}
+
+.footer__sns-title {
+  text-align: center;
+}
+
+.footer__sns-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+.footer__sns-item:not(:last-child) {
+  margin: 0 15px 0 0;
+}
+
+.footer__sns-link {
+  position: relative;
+  font-size: 2rem;
+}
+
+.footer__sns-link i.fa-twitter {
+  color: #55acee;
+}
+
+.footer__sns-link i.fa-line {
+  color: #00b900;
+}
+
+.footer__sns-link i.fa-youtube {
+  color: red;
+}
+
+.footer__sns-link i.fa-facebook-f {
+  color: #3b5a9a;
+}
+
+.footer__sns-link i.fa-instagram {
+  color: #000;
+}
+
 @media (min-width: 600px) {
   h2 {
     font-size: 3.5rem;
@@ -1250,7 +1531,7 @@ h2 {
   /*------------------------------
 	8.4 top-main
 ------------------------------*/
-  #top-main:before {
+  .top-main:before {
     background-position: no-repeat center;
     background-size: auto cover;
   }
@@ -1263,30 +1544,30 @@ h2 {
   /*------------------------------
 	8.7 vision
 ------------------------------*/
-  #vision {
+  .vision {
     margin: 0 0 100px 0;
   }
-  #vision .img {
+  .vision .img {
     width: 40%;
     min-height: 590px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  #vision .content {
+  .vision .content {
     width: 50%;
     text-align: right;
   }
-  #vision .vision-lead {
+  .vision .vision-lead {
     font-size: 1.3rem;
   }
   /*------------------------------
 	8.8 service 
 ------------------------------*/
-  #service > h2 {
+  .service > h2 {
     margin: 0 0 100px 0;
   }
-  #service .service-area {
+  .service .service-area {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1298,10 +1579,10 @@ h2 {
         flex-wrap: wrap;
     margin: 0 0 300px 0;
   }
-  #service .service-area > .img {
+  .service .service-area > .img {
     width: 50%;
   }
-  #service .service-area .content {
+  .service .service-area .content {
     width: 40%;
     top: 150px;
   }
@@ -1325,15 +1606,15 @@ h2 {
   /*------------------------------
 	8.1 header
 ------------------------------*/
-  #header {
+  .header {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     height: 100px;
   }
-  #header > h1 {
+  .header > h1 {
     font-size: 1.5rem;
-    top: 0%;
+    top: 30%;
     /*基準値40%*/
     line-height: 1;
     letter-spacing: 0.2em;
@@ -1341,13 +1622,13 @@ h2 {
   /*------------------------------
 	8.3 pc-nav
 ------------------------------*/
-  #pc-nav {
+  .pc-nav {
     display: block;
   }
-  #pc-nav span.bgLRextend::before {
+  .pc-nav span.bgLRextend::before {
     background: #333;
   }
-  #pc-nav ul {
+  .pc-nav ul {
     list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1358,10 +1639,11 @@ h2 {
     text-transform: uppercase;
     margin: 0 0 0 5%;
   }
-  #pc-nav ul > li {
+  .pc-nav ul > li {
     white-space: nowrap;
   }
-  #pc-nav ul > li > a {
+  .pc-nav ul > li > a {
+    position: relative;
     display: block;
     text-decoration: none;
     color: #333;
@@ -1370,14 +1652,39 @@ h2 {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
-  #pc-nav li.current a,
-  #pc-nav li a:hover {
-    color: #eb6100;
+  .pc-nav ul > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: #333;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+  }
+  .pc-nav li.current a,
+  .pc-nav li a:hover::after {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  /*------------------------------
+	8.3 g-nav
+------------------------------*/
+  .openbtn {
+    display: none;
+  }
+  .g-nav {
+    display: none;
   }
   /*------------------------------
 	8.4 top-main
 ------------------------------*/
-  #top-main:before {
+  .top-main:before {
     width: 90%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1394,12 +1701,80 @@ h2 {
   /*------------------------------
 	8.8 service 
 ------------------------------*/
-  #service h2 .service-area {
+  .service h2 .service-area {
     margin: 0 0 300px 0;
   }
-  #service h2 .service-area .content {
+  .service h2 .service-area .content {
     width: 40%;
     top: 150px;
+  }
+  /*------------------------------
+	8.9 about 
+------------------------------*/
+  .about {
+    margin: 0 0 100px 0;
+  }
+  /*------------------------------
+	8.10 contact 
+------------------------------*/
+  .contact {
+    margin: 0 0 100px 0;
+  }
+  /*------------------------------
+	8.11 footer 
+------------------------------*/
+  .footer__logo > img {
+    width: 15%;
+    height: auto;
+  }
+  .footer__accordion {
+    display: none;
+  }
+  .footer__pc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto 100px auto;
+  }
+  .footer__pc > li {
+    border: none;
+    width: calc(100%/5);
+    background: inherit;
+  }
+  .footer__pc > li:first-child {
+    border: none;
+  }
+  .footer__pc > li > h3 {
+    font-size: 1.8rem;
+  }
+  .footer__pc > li > section > h3 {
+    position: relative;
+    font-size: 1.8rem;
+    padding: 20px 10px 10px 20px;
+    margin: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  .footer__pc > li > section > h3::before, .footer__pc > li > section > h3::after {
+    display: none;
+  }
+  .footer__pc > li > section .box {
+    display: block;
+  }
+  .footer__pc > li > section .box > p {
+    padding: 0 0 0 30px;
+    position: relative;
+    text-align: left;
+    top: 0;
+    left: 24%;
+  }
+  .footer__pc > li > section .box > p::before {
+    content: '-';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 /*# sourceMappingURL=style.css.map */
