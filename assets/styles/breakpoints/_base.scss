@@ -107,13 +107,13 @@ figure {
 	h2 .heading 見出し
 ------------------------------*/
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
 }
 
 .heading {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     position: relative;
     text-transform: uppercase;
     &::before {
@@ -139,11 +139,19 @@ h2 {
     }
 }
 /*--------------------------------------------------------------
-8.0 Section
-8.1  header
-8.2  top-main
-8.3  global-nav
-8.3-1  pc-nav
+8.0   Section(共通設定)
+8.1   header
+8.2   top-main
+8.3   g-nav
+8.3-1 pc-nav
+8.4   top-main
+8.5   top-lead
+8.6   topics
+8.7   vision
+8.8   service
+8.9   about
+8.10  contact
+8.11  footer
 
 --------------------------------------------------------------*/
 /*------------------------------
@@ -207,8 +215,9 @@ h2 {
 	    height: 75vh;
 	    /*背景画像設定*/
         background-attachment: fixed;
-	    background: url("/assets/images/top-img.jpg") top center;
+	    background: url("/assets/images/top-main-img.jpg");
 	    background-size: cover;
+        background-position: 75% center;
     }
 } 
 
@@ -246,6 +255,9 @@ h2 {
     padding: 0 0 0 20px;
 
     & >h2 {
+        & >span {
+            font-size: 2.5rem;
+        }
         & >span.bgLRextend::before {
             background:$cBlack;
         }

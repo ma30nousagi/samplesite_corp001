@@ -1095,13 +1095,13 @@ figure {
 	h2 .heading 見出し
 ------------------------------*/
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
 .heading {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   position: relative;
   text-transform: uppercase;
 }
@@ -1132,11 +1132,19 @@ h2 {
 }
 
 /*--------------------------------------------------------------
-8.0 Section
-8.1  header
-8.2  top-main
-8.3  global-nav
-8.3-1  pc-nav
+8.0   Section(共通設定)
+8.1   header
+8.2   top-main
+8.3   g-nav
+8.3-1 pc-nav
+8.4   top-main
+8.5   top-lead
+8.6   topics
+8.7   vision
+8.8   service
+8.9   about
+8.10  contact
+8.11  footer
 
 --------------------------------------------------------------*/
 /*------------------------------
@@ -1206,8 +1214,9 @@ h2 {
   height: 75vh;
   /*背景画像設定*/
   background-attachment: fixed;
-  background: url("/assets/images/top-img.jpg") top center;
+  background: url("/assets/images/top-main-img.jpg");
   background-size: cover;
+  background-position: 75% center;
 }
 
 .container {
@@ -1243,6 +1252,10 @@ h2 {
   border-left: 3px solid #000;
   margin: 0 0 100px 0;
   padding: 0 0 0 20px;
+}
+
+.topics > h2 > span {
+  font-size: 2.5rem;
 }
 
 .topics > h2 > span.bgLRextend::before {
@@ -1641,9 +1654,47 @@ h2 {
   color: #000;
 }
 
+@media (min-width: 480px) {
+  /*--------------------------------------------------------------
+8.0   Section(共通設定)
+8.1   header
+8.2   top-main
+8.3   g-nav
+8.3-1 pc-nav
+8.4   top-main
+8.5   top-lead
+8.6   topics
+8.7   vision
+8.8   service
+8.9   about
+8.10  contact
+8.11  footer
+
+--------------------------------------------------------------*/
+}
+
 @media (min-width: 600px) {
+  /*--------------------------------------------------------------
+8.0   Section(共通設定)
+8.1   header
+8.2   top-main
+8.3   g-nav
+8.3-1 pc-nav
+8.4   top-main
+8.5   top-lead
+8.6   topics
+8.7   vision
+8.8   service
+8.9   about
+8.10  contact
+8.11  footer
+
+--------------------------------------------------------------*/
+  /*------------------------------
+	8.0 共通設定
+------------------------------*/
   h2 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
   /*------------------------------
 	8.4 top-main
@@ -1720,6 +1771,22 @@ h2 {
 }
 
 @media (min-width: 960px) {
+  /*--------------------------------------------------------------
+8.0   Section(共通設定)
+8.1   header
+8.2   top-main
+8.3   g-nav
+8.3-1 pc-nav
+8.4   top-main
+8.5   top-lead
+8.6   topics
+8.7   vision
+8.8   service
+8.9   about
+8.10  contact
+8.11  footer
+
+--------------------------------------------------------------*/
   /*------------------------------
 	8.1 header
 ------------------------------*/
@@ -1737,7 +1804,16 @@ h2 {
     letter-spacing: 0.2em;
   }
   /*------------------------------
-	8.3 pc-nav
+	8.3 g-nav
+------------------------------*/
+  .openbtn {
+    display: none;
+  }
+  .g-nav {
+    display: none;
+  }
+  /*------------------------------
+	8.3-1 pc-nav
 ------------------------------*/
   .pc-nav {
     display: block;
@@ -1790,19 +1866,9 @@ h2 {
             transform: scale(1, 1);
   }
   /*------------------------------
-	8.3 g-nav
-------------------------------*/
-  .openbtn {
-    display: none;
-  }
-  .g-nav {
-    display: none;
-  }
-  /*------------------------------
 	8.4 top-main
 ------------------------------*/
   .top-main:before {
-    width: 90%;
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -1814,6 +1880,9 @@ h2 {
   }
   /*------------------------------
 	8.6 topics
+------------------------------*/
+  /*------------------------------
+	8.7 vision
 ------------------------------*/
   /*------------------------------
 	8.8 service 
