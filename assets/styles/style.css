@@ -198,7 +198,7 @@
   position: fixed;
   cursor: pointer;
   top: 10px;
-  right: 0;
+  right: -20px;
   width: 100px;
   height: 50px;
   padding: 2px;
@@ -268,42 +268,166 @@
           transform: rotate(-20deg);
 }
 
-/*画像を出現させるアニメーションCSS*/
-.flipLeft {
-  -webkit-animation-name: flipLeft;
-          animation-name: flipLeft;
+.bgextend {
+  -webkit-animation-name: bgextendAnimeBase;
+          animation-name: bgextendAnimeBase;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  position: relative;
+  overflow: hidden;
+  /*　はみ出た色要素を隠す　*/
+  opacity: 0;
+}
+
+@-webkit-keyframes bgextendAnimeBase {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bgextendAnimeBase {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*中の要素*/
+.bgappear {
+  -webkit-animation-name: bgextendAnimeSecond;
+          animation-name: bgextendAnimeSecond;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes bgextendAnimeSecond {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bgextendAnimeSecond {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bgLRextend::before {
+  -webkit-animation-name: bgLRextendAnime;
+          animation-name: bgLRextendAnime;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #eb6100;
+  /*伸びる背景色の設定*/
+}
+
+@-webkit-keyframes bgLRextendAnime {
+  0% {
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  50% {
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  50.001% {
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+  100% {
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@keyframes bgLRextendAnime {
+  0% {
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  50% {
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  50.001% {
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+  100% {
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+.fadeUp {
+  -webkit-animation-name: fadeUpAnime;
+          animation-name: fadeUpAnime;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-perspective-origin: left center;
-          perspective-origin: left center;
   opacity: 0;
 }
 
-@-webkit-keyframes flipLeft {
+@-webkit-keyframes fadeUpAnime {
   from {
-    -webkit-transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
-            transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
     opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
   }
   to {
-    -webkit-transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
-            transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
     opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
-@keyframes flipLeft {
+@keyframes fadeUpAnime {
   from {
-    -webkit-transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
-            transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
     opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
   }
   to {
-    -webkit-transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
-            transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
     opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -427,29 +551,6 @@
   text-decoration: underline;
 }
 
-.page-top {
-  position: fixed;
-  display: block;
-  z-index: 100;
-  right: 0;
-  bottom: 30px;
-}
-
-.page-top .page-top__link {
-  display: block;
-  padding: 15px;
-  border-radius: 50%;
-  background: rgba(96, 216, 214, 0.5);
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-}
-
-.page-top .fa-arrow-up::before {
-  content: "\f077";
-  font-size: 20px;
-}
-
 @media screen and (max-width: 960px) {
   table {
     border: 0;
@@ -547,7 +648,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #ffa0b4;
+  background: #fff;
   z-index: 9999999;
   text-align: center;
   color: #fff;
@@ -561,28 +662,27 @@
           transform: translate(-50%, -50%);
 }
 
-#splash-logo > img {
-  width: 50%;
-  height: auto;
+#splash-logo img {
+  width: 50px;
 }
 
+/*========= 画面遷移のためのCSS ===============*/
+/*画面遷移アニメーション*/
 .splashbg {
   display: none;
 }
 
-/*bodyにappearクラスがついたら出現*/
 body.appear .splashbg {
   display: block;
-  content: "";
   position: fixed;
-  z-index: 99999;
+  z-index: 999;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  background-color: #ffa0b4;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  background-color: #eb6100;
   /*伸びる背景色の設定*/
   -webkit-animation-name: PageAnime;
           animation-name: PageAnime;
@@ -596,62 +696,62 @@ body.appear .splashbg {
 
 @-webkit-keyframes PageAnime {
   0% {
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
   }
   50% {
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
   }
   50.001% {
-    -webkit-transform-origin: right;
-            transform-origin: right;
+    -webkit-transform-origin: top;
+            transform-origin: top;
   }
   100% {
-    -webkit-transform-origin: right;
-            transform-origin: right;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
   }
 }
 
 @keyframes PageAnime {
   0% {
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
   }
   50% {
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
   }
   50.001% {
-    -webkit-transform-origin: right;
-            transform-origin: right;
+    -webkit-transform-origin: top;
+            transform-origin: top;
   }
   100% {
-    -webkit-transform-origin: right;
-            transform-origin: right;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
   }
 }
 
 /*画面遷移の後現れるコンテンツ設定*/
-.loader {
+#wrapper {
   opacity: 0;
   /*はじめは透過0に*/
 }
 
 /*bodyにappearクラスがついたら出現*/
-body.appear .loader {
+body.appear #wrapper {
   -webkit-animation-name: PageAnimeAppear;
           animation-name: PageAnimeAppear;
   -webkit-animation-duration: 1s;
@@ -747,21 +847,24 @@ body.appear .loader {
   /*ニュース1行の周りの余白*/
 }
 
-.slider li > a {
+.slider > li {
+  height: 45px;
+}
+
+.slider > li > a {
   display: block;
   background: #fff;
   padding: 10px 0;
   /*日付*/
 }
 
-.slider li > a > time {
+.slider > li > a > time {
   display: inline-block;
   font-size: 0.8rem;
   margin-right: 10px;
   color: #777;
 }
 
-/*599px以下の見た目*/
 @media screen and (max-width: 599px) {
   .slider {
     padding: 20px;
@@ -779,7 +882,7 @@ body.appear .loader {
   }
 }
 
-#page-top {
+.page-top {
   position: fixed;
   bottom: -2%;
   right: 0;
@@ -789,7 +892,7 @@ body.appear .loader {
           transform: translateX(100px);
 }
 
-#page-top > a {
+.page-top > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -811,11 +914,11 @@ body.appear .loader {
   transition: all .3s;
 }
 
-#page-top > a:hover {
+.page-top > a:hover {
   background: #e07c18;
 }
 
-#page-top.UpMove {
+.page-top.UpMove {
   -webkit-animation: UpAnime 0.5s forwards;
           animation: UpAnime 0.5s forwards;
 }
@@ -846,7 +949,7 @@ body.appear .loader {
   }
 }
 
-#page-top.DownMove {
+.page-top.DownMove {
   -webkit-animation: DownAnime 0.5s forwards;
           animation: DownAnime 0.5s forwards;
 }
@@ -1130,7 +1233,7 @@ h2 {
 }
 
 .top-lead > span.bgLRextend::before {
-  background: #333;
+  background: #e07c18;
 }
 
 /*------------------------------
@@ -1301,6 +1404,7 @@ h2 {
 
 .service .service-area .content-area > p {
   margin: 0 0 30px 0;
+  line-height: 1.6;
 }
 
 .service .btn {
@@ -1321,6 +1425,10 @@ h2 {
 
 .about > h2 > span {
   color: #333;
+}
+
+.about > h2 > span.bgLRextend::before {
+  background: #333;
 }
 
 .about__list > li {
@@ -1344,6 +1452,7 @@ h2 {
 
 .about__list-area > p {
   margin: 0 0 30px 0;
+  line-height: 1.6;
 }
 
 .about__list-area .btn {
@@ -1361,10 +1470,18 @@ h2 {
   margin: 0 0 50px 0;
 }
 
+.contact > h2 > span.bgLRextend::before {
+  background: #333;
+}
+
 .contact__area {
   text-align: center;
   background: #f2f2f2;
   padding: 10px 40px 40px 40px;
+}
+
+.contact__area > p {
+  line-height: 1.6;
 }
 
 .contact__area .btn {

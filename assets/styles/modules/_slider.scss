@@ -1,11 +1,12 @@
 /*------------------------------
 	ニュースティッカー
 ------------------------------*/
-
-
 .slider {
     /*ニュース1行の周りの余白*/
-    & li>a {
+    & >li {
+        height: 45px;
+    }
+    & >li>a {
         display: block;
         background:#fff;
         padding:10px 0;
@@ -19,8 +20,6 @@
     }
 }
 
-
-/*599px以下の見た目*/
 @media screen and (max-width:599px) {
     .slider {
         padding:20px;

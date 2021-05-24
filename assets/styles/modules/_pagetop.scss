@@ -1,4 +1,4 @@
-#page-top {
+.page-top {
     position: fixed;
     bottom: -2%;
     right: 0;
@@ -24,7 +24,7 @@
     }
 }
 
-#page-top.UpMove{
+.page-top.UpMove{
 	animation: UpAnime 0.5s forwards;
 }
 @keyframes UpAnime{
@@ -38,7 +38,7 @@
   }
 }
 
-#page-top.DownMove{
+.page-top.DownMove{
 	animation: DownAnime 0.5s forwards;
 }
 @keyframes DownAnime{
